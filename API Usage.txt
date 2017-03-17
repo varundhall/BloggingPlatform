@@ -1,0 +1,25 @@
+API Documentation
+
+1. Add a new blog post
+URL: http://localhost:8080/bloggingplatform/blog/add
+METHOD: POST
+fields: {title:text, plainText:text}
+
+2. View all blog posts - as a list of 5 in pages
+URL: http://localhost:8080/bloggingplatform/blog/view
+METHOD: GET
+fields: {pageNumber:int} (default 1)
+
+3. View only a single blog post
+URL: http://localhost:8080/bloggingplatform/blog/{BLOGID}
+METHOD: GET
+Valid BlogID is required
+
+4. Add comment to single paragraph
+URL: http://localhost:8080/bloggingplatform/blog/{BLOGID}/para/{PARAID}
+METHOD: POST
+fields: {comment:text}
+Valid BlogID and ParaID are required
+
+
+Note - The blog content will be split into two paragraphs if there is '\n\n\n' present in the text.
